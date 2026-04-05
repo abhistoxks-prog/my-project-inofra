@@ -23,7 +23,10 @@ export default function AgentCard({ agent, onRun, running }: Props) {
   const cfg = statusConfig[agent.status] ?? statusConfig.idle
   const icon = agentIcons[agent.name] ?? '🤖'
   const lastUpdated = agent.last_updated
-    ? new Date(agent.last_updated + 'Z').toLocaleTimeString()
+    ? (() => {
+        const ts = agent.last_updated.endsWith('Z') ? agent.last_updated : agent.last_updated + 'Z'
+        return new Date(ts).toLocaleTimeString()
+      })()
     : 'Never'
 
   return (
