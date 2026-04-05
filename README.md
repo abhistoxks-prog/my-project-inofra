@@ -117,7 +117,14 @@ Open http://localhost:5173
 
 ## 📸 Screenshots
 
-> _Dashboard, Agents, and Settings pages — dark theme UI with live data_
+### Dashboard — Weather, Markets, Agent Status & Live Feed
+![Dashboard](docs/screenshots/dashboard.png)
+
+### Agents — Status & Manual Control
+![Agents](docs/screenshots/agents.png)
+
+### Settings — Topics, Location & Refresh Interval
+![Settings](docs/screenshots/settings.png)
 
 ---
 

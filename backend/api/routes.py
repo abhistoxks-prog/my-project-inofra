@@ -43,7 +43,7 @@ async def agent_results(name: str):
 
 
 @router.get("/feed")
-async def get_feed():
+async def get_feed(limit: int = 50):
     results = manager.get_results()
     feed_items = []
 
@@ -56,6 +56,8 @@ async def get_feed():
         feed_items.extend(market.get("news", []))
 
     feed_items.sort(key=lambda x: x.get("published", ""), reverse=True)
+    if limit > 0:
+        feed_items = feed_items[:limit]
     return {"items": feed_items, "total": len(feed_items)}
 
 
